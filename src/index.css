@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #080808;
+    --bg-surface: #101010;
+    --bg-surface-elevated: #161616;
+    --border-subtle: #222222;
+    --border-active: #383838;
+    --text-primary: #F5F5F5;
+    --text-secondary: #9E9E9E;
+    --text-muted: #666666;
+    --accent: #FF6B35;
+    --accent-glow: rgba(255, 107, 53, 0.25);
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .font-cursive {
+    font-family: 'Dancing Script', 'Kaushan Script', cursive;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6B35;
+}
+
+/* Cinematic glows & vignette */
+.radial-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.15) 0%, rgba(8, 8, 8, 0) 70%);
+}
+
+.radial-vignette {
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(8, 8, 8, 0.85) 90%);
+}
+
+.text-glow {
+  text-shadow: 0 0 24px rgba(255, 107, 53, 0.35);
+}
+
+.card-gradient {
+  background: linear-gradient(180deg, rgba(22, 22, 22, 0.7) 0%, rgba(12, 12, 12, 0.9) 100%);
+}

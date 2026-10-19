@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adil Ali — Resume</title>
+  <meta name="description" content="Resume of Adil Ali — Computer Science & Engineering (AI & ML) student and Full-Stack Developer." />
+  <style>
+    :root {
+      --bg: #0a0a0e;
+      --card-bg: #121217;
+      --border: #24242e;
+      --accent: #FF6B35;
+      --accent-soft: rgba(255, 107, 53, 0.12);
+      --text: #eaeaea;
+      --text-muted: #9a9aa8;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding: 32px 16px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .back-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-family: var(--font-mono);
+      transition: color 0.2s;
+    }
+    .back-link:hover {
+      color: var(--accent);
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.2s;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    header {
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .headline {
+      font-size: 16px;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      margin-bottom: 16px;
+    }
+
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+      font-size: 13px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+    }
+
+    .contacts a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--border);
+      transition: color 0.2s;
+    }
+    .contacts a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .summary-text {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .item {
+      margin-bottom: 16px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .item-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .item-date {
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+    }
+
+    .item-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      background: #181822;
+      border: 1px solid var(--border);
+      color: #cfcfdc;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+    }
+
+    .interests-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .interests-list li::before {
+      content: "▸";
+      color: var(--accent);
+      margin-right: 8px;
+    }
+
+    .placeholder-note {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed #343442;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: #7e7e8c;
+      font-family: var(--font-mono);
+      margin-top: 10px;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #fff;
+        color: #111;
+        padding: 0;
+      }
+      .container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        background: #fff;
+      }
+      .toolbar {
+        display: none;
+      }
+      h1, .item-title {
+        color: #000;
+      }
+      .headline, h2 {
+        color: #d14900;
+      }
+      .summary-text, .item-subtitle, .contacts, .interests-list {
+        color: #333;
+      }
+      .tag {
+        background: #f0f0f0;
+        border-color: #ddd;
+        color: #222;
+      }
+      .placeholder-note {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="toolbar">
+      <a href="/" class="back-link">← Return to Portfolio</a>
+      <button class="btn" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        Print / Save as PDF
+      </button>
+    </div>
+
+    <header>
+      <h1>Adil Ali</h1>
+      <div class="headline">Computer Science Student | AI & ML | Full-Stack Development</div>
+      <div class="contacts">
+        <div>Phone: <a href="tel:7982678397">+91 7982678397</a></div>
+        <div>Email: <a href="mailto:adil798267@gmail.com">adil798267@gmail.com</a></div>
+        <div>GitHub: <a href="https://github.com/Adil-ali-007" target="_blank" rel="noopener noreferrer">github.com/Adil-ali-007</a></div>
+        <div>LinkedIn: <a href="https://www.linkedin.com/in/adil-ali-3183a8377/" target="_blank" rel="noopener noreferrer">linkedin.com/in/adil-ali-3183a8377</a></div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary-text">
+        Computer Science and Engineering undergraduate specializing in Artificial Intelligence and Machine Learning. Passionate about building functional full-stack web applications and practical AI systems. Driven by solving real-world engineering problems through hands-on development, rigorous data structures, and intuitive modern interfaces.
+      </p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Web Developer Intern</div>
+          <div class="item-date">May 8, 2026 – May 22, 2026</div>
+        </div>
+        <div class="item-subtitle">InAmigos Foundation · Internship</div>
+        <p class="summary-text">
+          Applied web development skills in a professional internship environment and strengthened my practical development experience.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Shri Vishwakarma Skill University</div>
+          <div class="item-date">Graduation: 2029</div>
+        </div>
+        <div class="item-subtitle">Bachelor of Technology (B.Tech) — Computer Science and Engineering (AI & ML)</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+        <div>
+          <div style="font-size: 12px; font-family: var(--font-mono); color: var(--accent); margin-bottom: 4px;">Languages & Core</div>
+          <div class="tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">C++</span>
+            <span class="tag">Python</span>
+            <span class="tag">DSA</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12px; font-family: var(--font-mono); color: var(--accent); margin-bottom: 4px;">Frontend & Creative</div>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Three.js</span>
+            <span class="tag">GSAP</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12px; font-family: var(--font-mono); color: var(--accent); margin-bottom: 4px;">Backend & Database</div>
+          <div class="tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">REST APIs</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12px; font-family: var(--font-mono); color: var(--accent); margin-bottom: 4px;">Data & ML Tools</div>
+          <div class="tags">
+            <span class="tag">NumPy</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Featured Projects</h2>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Tomato Food Delivery Platform</div>
+          <div class="item-date">React · Node.js · MongoDB</div>
+        </div>
+        <div class="summary-text">
+          Full-stack food ordering platform featuring restaurant catalogs, dynamic cart calculation, and authenticated checkout flow.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Swiggy Hyperlocal Clone</div>
+          <div class="item-date">React · Tailwind CSS · REST API</div>
+        </div>
+        <div class="summary-text">
+          Hyperlocal food delivery web client with category filtering, restaurant listing algorithms, and responsive mobile-first UI.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Interactive 3D Graphics Portfolio</div>
+          <div class="item-date">React · Three.js · GSAP · WebGL</div>
+        </div>
+        <div class="summary-text">
+          Interactive developer portfolio featuring real-time 3D procedural scenes, scroll-driven camera controls, and custom shaders.
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Resource Management & CRUD Platform</div>
+          <div class="item-date">Node.js · Express · MongoDB</div>
+        </div>
+        <div class="summary-text">
+          Scalable data persistence platform featuring verified CRUD operations, schema validation, and indexed queries.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Engineering Interests</h2>
+      <ul class="interests-list">
+        <li>Building practical AI-powered applications</li>
+        <li>Developing full-stack web applications</li>
+        <li>Turning ideas into functional projects</li>
+        <li>Exploring AI engineering and creative development</li>
+        <li>Learning by building, experimenting, and solving real problems</li>
+      </ul>
+    </section>
+
+    <div class="placeholder-note">
+      [Editable Placeholder Resume for Adil Ali — Update or replace with official career documents as academic milestones and internships progress.]
+    </div>
+  </div>
+</body>
+</html>
