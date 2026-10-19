@@ -6,7 +6,7 @@ The project was developed with assistance from **Google AI Studio**, with a focu
 
 ## 🌐 Live Demo
 
-- **Live Portfolio:** [View My Portfolio](https://adil-ali-3d-creative-developer-portfolio.ai.studio/)
+- **Live Portfolio:** [View My Portfolio](https://adil-ali-portfolio.netlify.app/)
 - **GitHub Repository:** [Portfolio-website](https://github.com/Adil-ali-007/Portfolio-website)
 
 ## ✨ Features
